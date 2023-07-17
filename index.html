@@ -3,7 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página al estilo Roblox</title>
+  <title>REICH CONDO ROBLOX</title>
+  <script>
+    function sanitizeInput(input) {
+      // Sanitiza el input para evitar la ejecución de scripts maliciosos
+      var sanitizedInput = input.replace(/<script.*?>|<\/script>/gi, '');
+
+      // Agrega aquí cualquier otra lógica de sanitización necesaria
+
+      return sanitizedInput;
+    }
+
+    function escapeOutput(output) {
+      // Escapa la salida para prevenir ataques de cross-site scripting (XSS)
+      var escapedOutput = output.replace(/&/g, '&amp;')
+                                .replace(/</g, '&lt;')
+                                .replace(/>/g, '&gt;')
+                                .replace(/"/g, '&quot;')
+                                .replace(/'/g, '&#39;');
+
+      return escapedOutput;
+    }
+
+    function handleFormSubmit() {
+      // Obtiene el valor del campo de entrada del formulario
+      var userInput = document.getElementById("inputField").value;
+
+      // Sanitiza el input del usuario para evitar inyección de código
+      var sanitizedInput = sanitizeInput(userInput);
+
+      // Escapa la salida antes de mostrarla en la página
+      var escapedOutput = escapeOutput(sanitizedInput);
+
+      // Muestra el resultado en un elemento de la página
+      var outputElement = document.getElementById("outputElement");
+      outputElement.innerHTML = escapedOutput;
+    }
+  </script>
+  <script>
+    function sanitizeInput(input) {
+      // Sanitiza el input para evitar la ejecución de scripts maliciosos
+      // Implementa tu lógica de sanitización aquí
+      return input;
+    }
+
+    function escapeOutput(output) {
+      // Escapa la salida para prevenir ataques de cross-site scripting (XSS)
+      // Implementa tu lógica de escape aquí
+      return output;
+    }
+
+    function handleFormSubmit() {
+      // Obtiene el valor del campo de entrada del formulario
+      var userInput = document.getElementById("inputField").value;
+
+      // Sanitiza el input del usuario para evitar inyección de código
+      var sanitizedInput = sanitizeInput(userInput);
+
+      // Escapa la salida antes de mostrarla en la página
+      var escapedOutput = escapeOutput(sanitizedInput);
+
+      // Muestra el resultado en un elemento de la página
+      document.getElementById("outputElement").innerHTML = escapedOutput;
+    }
+  </script>
   <style>
     body {
       background-color: #000000;
@@ -59,8 +122,33 @@
       margin: 0;
     }
   </style>
+ <style>
+  .botonjugar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #80ff00; /* Cambia el color aquí */
+    color: #000000; /* Cambia el color del texto aquí */
+    font-size: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
+  <button class="botonjugar">JUGAR</button>
+  <script>
+    // Obtener el botón por su ID
+    var boton = document.getElementById("botonjugar");
+
+    // Agregar un event listener para el clic
+    boton.addEventListener("click", function() {
+      // Código que se ejecutará al hacer clic en el botón
+      alert("¡Hiciste clic en el botón!");
+    });
+  </script>
   <header>
     <h1>REICH CONDO ROBLOX</h1>
   </header>
@@ -89,3 +177,4 @@
   </footer>
 </body>
 </html>
+
